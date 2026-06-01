@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jamal Fahadh Mohamed | Graphic Designer Portfolio</title>
+<title>Jamal Fahadh Mohamed | Creative & Technical Graphic Designer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -97,6 +97,12 @@ header{
     text-decoration:none;
     border-radius:8px;
     font-weight:600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .btn-primary{
@@ -113,6 +119,7 @@ header{
 
 section{
     padding:80px 10%;
+    border-bottom: 1px solid #1e293b;
 }
 
 .section-title{
@@ -134,6 +141,49 @@ section{
     background:var(--card);
     padding:30px;
     border-radius:15px;
+}
+
+.card h3{
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.7;
+    color: var(--light);
+}
+
+.card-list {
+    list-style: none;
+}
+
+.card-list li {
+    margin-bottom: 12px;
+}
+
+/* WHY HIRE ME SECTION */
+.why-hire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.benefit-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    border-top: 4px solid var(--secondary);
+}
+
+.benefit-card h3 {
+    margin-bottom: 10px;
+    color: var(--light);
+}
+
+.benefit-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* SKILLS */
@@ -177,12 +227,62 @@ section{
 
 .timeline-item{
     background:var(--card);
-    padding:25px;
+    padding:35px;
     border-left:5px solid var(--primary);
     border-radius:10px;
 }
 
+.timeline-item h3 {
+    font-size: 1.4rem;
+    color: var(--light);
+}
+
+.timeline-item .company {
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.timeline-item .date {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.timeline-item ul {
+    padding-left: 20px;
+    color: var(--muted);
+}
+
+.timeline-item li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
 /* PORTFOLIO */
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: var(--card);
+    color: var(--light);
+    border: 1px solid var(--muted);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
 
 .portfolio{
     display:grid;
@@ -194,6 +294,11 @@ section{
     background:var(--card);
     border-radius:15px;
     overflow:hidden;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
 }
 
 .project img{
@@ -206,14 +311,79 @@ section{
     padding:20px;
 }
 
+.project-content p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
 .tag{
     display:inline-block;
-    margin-top:10px;
+    margin-top:15px;
     background:#0ea5e915;
     color:#38bdf8;
     padding:6px 10px;
     border-radius:6px;
     font-size:12px;
+    font-weight: 600;
+}
+
+/* EDUCATION SECTION */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.edu-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    border-right: 5px solid var(--secondary);
+}
+
+.edu-card h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.edu-card .institution {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.edu-card .grade {
+    display: inline-block;
+    background: rgba(0, 168, 89, 0.15);
+    color: #4ade80;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* REFERENCES SECTION */
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.ref-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.ref-card h3 {
+    color: var(--light);
+    margin-bottom: 5px;
+}
+
+.ref-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
 }
 
 /* CONTACT */
@@ -223,8 +393,13 @@ section{
 }
 
 .contact p{
-    margin:10px 0;
-    color:var(--muted);
+    margin:15px 0;
+    color:var(--light);
+    font-size:1.1rem;
+}
+
+.contact p span {
+    color: var(--muted);
 }
 
 footer{
@@ -240,7 +415,7 @@ footer{
     font-size:2rem;
 }
 
-.about{
+.about, .education-grid {
     grid-template-columns:1fr;
 }
 
@@ -258,56 +433,77 @@ footer{
 
 <h1>Jamal <span>Fahadh</span> Mohamed</h1>
 
-<h2>Graphic Designer | Branding Specialist | Web Designer</h2>
+<h2>Senior Graphic Designer | Pre-Press Technical Specialist</h2>
 
 <p>
-Creative Graphic Designer with 7+ years of experience in branding,
-print design, educational publications, social media graphics,
-website development and digital marketing materials.
-Skilled in Adobe Photoshop, Illustrator, Canva, HTML, CSS and
-responsive web design.
+Over 7 years of deep operational experience transforming creative concepts into high-converting corporate branding packages, precision digital resources, and flawless commercial print layouts[span_2](start_span)[span_2](end_span). Purpose-built to optimize printing press production and layout scaling.
 </p>
 
 <div class="buttons">
-<a href="Jamal_Fahadh_CV.pdf" class="btn btn-primary">Download CV</a>
-<a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+<a href="Jamal_Fahadh_CV.pdf" class="btn btn-primary">Download Production CV</a>
+<a href="#portfolio" class="btn btn-outline">Explore Portfolios</a>
 </div>
 
 </div>
 
 </header>
 
-<section>
+<!-- ABOUT ME SECTION -->
+<section id="about">
 
 <h2 class="section-title">About Me</h2>
 
 <div class="about">
 
 <div class="card">
-<h3>Professional Profile</h3>
-<br>
+<h3>Professional Journey</h3>
 <p>
-Experienced Graphic Designer and ICT Specialist based in Hargeisa,
-Somaliland. Passionate about creating impactful visual identities,
-marketing materials and educational resources that help organizations
-communicate effectively.
+I am a dedicated Graphic Designer and Information Technology professional based in Hargeisa[span_3](start_span)[span_3](end_span). Holding a Bachelor of Business Information Technology[span_4](start_span)[span_4](end_span), my unique competitive edge is combining standard creative design with rigorous technological execution. I bridge the gap between creative visual designs and absolute technical print-readiness.
 </p>
 </div>
 
 <div class="card">
-<h3>Quick Information</h3>
-<br>
-<p>📍 Hargeisa, Somaliland</p>
-<p>📞 +252 63 6710907</p>
-<p>✉ teacherfahadh@gmail.com</p>
-<p>🌐 teacherfahadh-ai.github.io</p>
+<h3>Quick Verification</h3>
+<ul class="card-list">
+<li><strong>📍 Location:</strong> Hargeisa, Somaliland[span_5](start_span)[span_5](end_span)</li>
+<li><strong>📞 Phone Line:</strong> +252 63 6710907[span_6](start_span)[span_6](end_span)</li>
+<li><strong>✉ Email Inbox:</strong> teacherfahadh@gmail.com[span_7](start_span)[span_7](end_span)</li>
+<li><strong>🌐 Live Domain:</strong> fahadict.github.io/tech[span_8](start_span)[span_8](end_span)</li>
+</ul>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<!-- WHY HIRE ME SECTION (SPECIFIC TO PRINT DESIGN SECTOR) -->
+<section id="technical-edge">
+
+<h2 class="section-title">The Pre-Press Edge</h2>
+
+<div class="why-hire-grid">
+
+<div class="benefit-card">
+<h3>Flawless File Setup</h3>
+<p>I prevent printing errors before they reach the press. Expert configuration of full bleed dimensions, precise print-safe cut margins, and high-DPI output parameters.</p>
+</div>
+
+<div class="benefit-card">
+<h3>Color Space Accuracy</h3>
+<p>Complete control over RGB conversion to CMYK color spacing. Ensuring corporate brand color profiles maintain absolute fidelity from monitor to final ink application.</p>
+</div>
+
+<div class="benefit-card">
+<h3>Vector Scaling Mastery</h3>
+<p>Specialized workflow leveraging Adobe Illustrator vectors[span_9](start_span)[span_9](end_span) to guarantee that large-format store banners, signage, and merchandise render with infinite resolution clarity.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CORE SKILLS SECTION -->
+<section id="skills">
 
 <h2 class="section-title">Core Skills</h2>
 
@@ -330,7 +526,7 @@ communicate effectively.
 </div>
 
 <div class="skill">
-<h3>Canva Design</h3>
+<h3>Canva Design Pro</h3>
 98%
 <div class="progress">
 <div class="fill" style="width:98%"></div>
@@ -338,7 +534,7 @@ communicate effectively.
 </div>
 
 <div class="skill">
-<h3>HTML & CSS</h3>
+<h3>HTML5 & CSS3</h3>
 85%
 <div class="progress">
 <div class="fill" style="width:85%"></div>
@@ -349,32 +545,32 @@ communicate effectively.
 
 </section>
 
-<section>
+<!-- EXPERIENCE SECTION -->
+<section id="experience">
 
-<h2 class="section-title">Experience</h2>
+<h2 class="section-title">Professional Experience</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<h3>Freelance Graphic Designer</h3>
-<p>2018 - Present</p>
-<br>
+<h3>Digital Branding & Pre-Press Consultant</h3>
+<div class="company">Freelance Corporate Engagements, Hargeisa[span_10](start_span)[span_10](end_span)</div>
+<div class="date">2018 - Present[span_11](start_span)[span_11](end_span)</div>
 <ul>
-<li>Designed logos and branding systems.</li>
-<li>Created brochures, flyers and banners.</li>
-<li>Developed social media campaigns.</li>
-<li>Prepared print-ready commercial files.</li>
+<li>Conceptualized and deployed complete corporate logo frameworks and extensive identity systems[span_12](start_span)[span_12](end_span).</li>
+<li>Engineered physical print-ready marketing layouts including multi-page booklets, brochures, flyers, and high-scale public banners[span_13](start_span)[span_13](end_span).</li>
+<li>Curated specialized micro-graphics optimized to secure rapid marketing metrics across Facebook and WhatsApp channels[span_14](start_span)[span_14](end_span).</li>
 </ul>
 </div>
 
 <div class="timeline-item">
-<h3>ICT Teacher & Digital Content Developer</h3>
-<p>Educational Sector</p>
-<br>
+<h3>ICT Teacher & Lead Digital Content Creator</h3>
+<div class="company">Elm High School, Hargeisa[span_15](start_span)[span_15](end_span)</div>
+<div class="date">September 2018 – June 2025</div>
 <ul>
-<li>Created ICT learning resources.</li>
-<li>Designed educational publications.</li>
-<li>Developed websites and online learning materials.</li>
+<li>Designed the institution's comprehensive academic publication arrays, schedules, student textbooks, and structural infographics[span_16](start_span)[span_16](end_span).</li>
+<li>Programmed and updated responsive internal portals and web-based multi-user resource centers using clean layout structures[span_17](start_span)[span_17](end_span).</li>
+<li>Oversaw organizational branding deployment, standardizing graphics across multiple media interfaces[span_18](start_span)[span_18](end_span).</li>
 </ul>
 </div>
 
@@ -382,36 +578,66 @@ communicate effectively.
 
 </section>
 
+<!-- EXPANDED ACADEMIC EDUCATION SECTION -->
+<section id="education">
+
+<h2 class="section-title">Education & Credentials</h2>
+
+<div class="education-grid">
+
+<div class="edu-card">
+<h3>Bachelor of Business Information Technology (BBIT)</h3>
+<div class="institution">Jomo Kenyatta University of Agriculture and Technology (JKUAT)[span_19](start_span)[span_19](end_span)</div>
+<div class="grade">Classification: Second Class Honors (Upper Division)[span_20](start_span)[span_20](end_span)</div>
+</div>
+
+<div class="edu-card">
+<h3>Certificate in E-Commerce, Web Design and Entrepreneurship</h3>
+<div class="institution">Technical Training Institute[span_21](start_span)[span_21](end_span)</div>
+<div class="grade">Classification: Distinction Grade[span_22](start_span)[span_22](end_span)</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- INTERACTIVE PORTFOLIO PROJECTS SECTION -->
 <section id="portfolio">
 
-<h2 class="section-title">Portfolio Projects</h2>
+<h2 class="section-title">Portfolio Deliverables</h2>
+
+<div class="portfolio-filters">
+<button class="filter-btn active" onclick="filterGallery('all')">All Works</button>
+<button class="filter-btn" onclick="filterGallery('print')">Print Layouts</button>
+<button class="filter-btn" onclick="filterGallery('branding')">Brand Identities</button>
+</div>
 
 <div class="portfolio">
 
-<div class="project">
-<img src="images/calendar.jpg">
+<div class="project" data-category="print">
+<img src="images/calendar.jpg" alt="Academic Layout Designs">
 <div class="project-content">
-<h3>Academic Calendars</h3>
-<p>Professional school calendars and educational publications.</p>
-<span class="tag">Print Design</span>
+<h3>Academic Calendars & Publications</h3>
+<p>Stellar typography frameworks and multi-page printable layout files compiled to exact press requirements[span_23](start_span)[span_23](end_span).</p>
+<span class="tag">Print Design Layout</span>
 </div>
 </div>
 
-<div class="project">
-<img src="images/logo-project.jpg">
+<div class="project" data-category="branding">
+<img src="images/logo-project.jpg" alt="Brand Identity Kits">
 <div class="project-content">
-<h3>Brand Identity Projects</h3>
-<p>Logo design and complete branding systems.</p>
-<span class="tag">Branding</span>
+<h3>Corporate Brand Ecosystems</h3>
+<p>Creation of vector corporate marks, specific color usage standards, and custom marketing templates[span_24](start_span)[span_24](end_span).</p>
+<span class="tag">Branding Architecture</span>
 </div>
 </div>
 
-<div class="project">
-<img src="images/social-media.jpg">
+<div class="project" data-category="branding">
+<img src="images/social-media.jpg" alt="Digital Marketing Design">
 <div class="project-content">
-<h3>Social Media Campaigns</h3>
-<p>Facebook, Instagram and WhatsApp promotional creatives.</p>
-<span class="tag">Digital Marketing</span>
+<h3>Targeted Marketing Channels</h3>
+<p>High-contrast digital art sets designed specifically to generate conversions across regional communication apps[span_25](start_span)[span_25](end_span).</p>
+<span class="tag">Digital Marketing Media</span>
 </div>
 </div>
 
@@ -419,27 +645,71 @@ communicate effectively.
 
 </section>
 
-<section class="contact">
+<!-- PROFESSIONAL REFERENCES SECTION -->
+<section id="references">
 
-<h2 class="section-title">Contact Me</h2>
+<h2 class="section-title">Professional References</h2>
 
-<p>📞 +252 63 6710907</p>
-<p>✉ teacherfahadh@gmail.com</p>
-<p>📍 Hargeisa, Somaliland</p>
+<div class="references-grid">
 
-<br>
+<div class="ref-card">
+<h3>Yusuf Lutta</h3>
+<p><strong>Principal</strong></p>
+<p>Elm High School, Hargeisa</p>
+</div>
 
-<a href="mailto:teacherfahadh@gmail.com" class="btn btn-primary">
-Hire Me
+<div class="ref-card">
+<h3>Awale Adam</h3>
+<p><strong>Administrator</strong></p>
+<p>Elm High School, Hargeisa</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- INTERACTION / CTA SECTION -->
+<section class="contact" id="contact">
+
+<h2 class="section-title">Secure a Technical Creative Asset</h2>
+
+<p><span>Direct Line:</span> +252 63 6710907</p>[span_26](start_span)[span_26](end_span)
+<p><span>Corporate Mail:</span> teacherfahadh@gmail.com</p>[span_27](start_span)[span_27](end_span)
+<p><span>Operational Base:</span> Hargeisa, Somaliland</p>[span_28](start_span)[span_28](end_span)
+
+<br><br>
+
+<a href="mailto:teacherfahadh@gmail.com" class="btn btn-primary">[span_29](start_span)[span_29](end_span)
+Hire Me Instantly
 </a>
 
 </section>
 
 <footer>
 
-© 2026 Jamal Fahadh Mohamed. All Rights Reserved.
+&copy; 2026 Jamal Fahadh Mohamed. All Rights Reserved. Fully Tailored for High-Volume Media Workflows.
 
 </footer>
+
+<!-- JAVASCRIPT GALLERY FILTER COMPONENT -->
+<script>
+function filterGallery(category) {
+    // Update button states
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // Filter portfolio cards
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(project => {
+        if (category === 'all' || project.getAttribute('data-category') === category) {
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
+    });
+}
+</script>
 
 </body>
 </html>
