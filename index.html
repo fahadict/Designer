@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamal Fahadh Mohamed | Creative & Technical Graphic Designer</title>
+    <title>Jamal Fahadh Mohamed | Lead Graphic Designer & Pre-Press Specialist</title>
     
     <!-- Premium Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --primary: #00A859;
+            --primary-glow: rgba(0, 168, 89, 0.15);
             --secondary: #0077B6;
-            --dark: #0f172a;
-            --card: #1e293b;
-            --light: #f8fafc;
-            --muted: #94a3b8;
-            --transition: all 0.3s ease;
+            --secondary-glow: rgba(0, 119, 182, 0.2);
+            --dark-bg: #090d16;
+            --card-bg: #131c2e;
+            --card-border: rgba(255, 255, 255, 0.05);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         html {
@@ -31,129 +35,173 @@
         }
 
         body {
-            background: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Hero Header Architecture - Paths fixed to root directory based on 10173.jpg */
+        /* Hero Header Studio Architecture */
         header {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+            padding: 80px 24px;
+            background: radial-gradient(circle at top right, var(--secondary-glow), transparent 40%),
+                        radial-gradient(circle at bottom left, var(--primary-glow), transparent 40%),
+                        linear-gradient(rgba(9, 13, 22, 0.8), rgba(9, 13, 22, 0.98)), 
                         url("banner.jpg") center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero {
-            max-width: 850px;
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
         }
 
         .profile {
-            width: 160px;
-            height: 160px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--primary);
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0, 168, 89, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 168, 89, 0.25);
+            transition: var(--transition);
+        }
+
+        .profile-wrapper:hover .profile {
+            transform: scale(1.03) rotate(2deg);
+            border-color: var(--secondary);
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 5px;
+            background: #00A859;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            border: 2px solid var(--dark-bg);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-family: var(--font-display);
+            font-size: 3.8rem;
             font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.02em;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
 
         .hero-title {
-            background: linear-gradient(to right, #ffffff 40%, var(--primary) 41%, var(--primary) 70%, #ffffff 71%);
+            background: linear-gradient(135deg, #ffffff 30%, #a5f3fc 50%, var(--primary) 75%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: inline-block;
         }
 
         .hero h2 {
+            font-family: var(--font-display);
             color: var(--secondary);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 500;
-            font-size: 1.4rem;
-            letter-spacing: 0.05em;
+            font-size: 1.6rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
         .hero p {
-            color: var(--muted);
-            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 35px;
+            max-width: 780px;
+            margin: 0 auto 40px auto;
         }
 
         /* Premium Interface Controls */
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            padding: 14px 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
             transition: var(--transition);
             cursor: pointer;
-            border: none;
+            letter-spacing: 0.02em;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), #00cb6b);
             color: white;
+            box-shadow: 0 10px 25px rgba(0, 168, 89, 0.3);
         }
 
         .btn-primary:hover {
-            background: #00944e;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 168, 89, 0.45);
         }
 
         .btn-outline {
-            border: 2px solid var(--secondary);
-            background: transparent;
+            border: 2px solid #1e293b;
+            background: rgba(255, 255, 255, 0.02);
             color: white;
         }
 
         .btn-outline:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
+            background: white;
+            color: var(--dark-bg);
+            border-color: white;
+            transform: translateY(-3px);
         }
 
         /* Content Structure Layouts */
         section {
-            padding: 90px 10%;
-            border-bottom: 1px solid #1e293b;
+            padding: 110px 10%;
+            position: relative;
         }
 
         .section-title {
+            font-family: var(--font-display);
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.6rem;
             font-weight: 700;
-            margin-bottom: 60px;
-            color: var(--light);
-            position: relative;
+            margin-bottom: 70px;
+            letter-spacing: -0.01em;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 60px;
             height: 4px;
-            background: var(--primary);
-            margin: 15px auto 0 auto;
-            border-radius: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 20px auto 0 auto;
+            border-radius: 4px;
         }
 
         .grid-2 {
@@ -164,533 +212,604 @@
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .card {
-            background: var(--card);
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .card h3 {
+            font-family: var(--font-display);
             color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
         }
 
         .info-label {
-            color: var(--muted);
+            color: var(--text-muted);
             font-weight: 600;
-            width: 140px;
+            width: 150px;
             display: inline-block;
         }
 
         .benefit-card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 12px;
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
             border-top: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
         }
 
         .benefit-card h3 {
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-            color: var(--light);
+            font-family: var(--font-display);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--text-main);
         }
 
         .benefit-card p {
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Skills Progress Matrix */
+        /* Skills Matrix Engine */
         .skill-bar {
-            background: var(--card);
-            padding: 25px;
-            border-radius: 12px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
         }
 
         .skill-info {
             display: flex;
             justify-content: space-between;
-            font-weight: 600;
-            margin-bottom: 10px;
+            align-items: center;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .skill-title {
-            color: var(--light);
+            color: var(--text-main);
+            font-family: var(--font-display);
+            font-size: 1.05rem;
         }
 
         .skill-pct {
             color: var(--primary);
+            font-size: 1.1rem;
         }
 
         .progress {
             height: 8px;
-            background: #334155;
-            border-radius: 4px;
+            background: #1e293b;
+            border-radius: 6px;
             overflow: hidden;
         }
 
         .fill {
             height: 100%;
-            border-radius: 4px;
-            background: var(--primary);
+            border-radius: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
         }
 
-        /* Work History Timeline */
+        /* Structural Design Timeline */
         .timeline {
             display: grid;
-            gap: 30px;
+            gap: 35px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .timeline-item {
-            background: var(--card);
-            padding: 35px;
+            background: var(--card-bg);
+            padding: 40px;
             border-left: 4px solid var(--primary);
-            border-radius: 0 12px 12px 0;
+            border-radius: 0 16px 16px 0;
+            border-top: 1px solid var(--card-border);
+            border-right: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--secondary);
+            transform: translateX(5px);
         }
 
         .timeline-item h3 {
-            font-size: 1.4rem;
-            color: var(--light);
-            margin-bottom: 5px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 6px;
         }
 
         .company {
             color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 5px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
         }
 
         .date {
             font-size: 0.9rem;
-            color: var(--muted);
-            margin-bottom: 20px;
+            color: var(--text-muted);
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .timeline-item ul {
             padding-left: 20px;
-            color: var(--muted);
+            color: var(--text-muted);
         }
 
         .timeline-item li {
-            margin-bottom: 10px;
-            line-height: 1.6;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
         }
 
-        /* Portfolio Components */
+        /* Portfolio Modules */
         .portfolio-filters {
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
         }
 
         .filter-btn {
-            background: var(--card);
-            color: var(--light);
-            border: 1px solid #334155;
-            padding: 8px 24px;
-            border-radius: 20px;
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            padding: 10px 28px;
+            border-radius: 30px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
+            font-family: var(--font-body);
             transition: var(--transition);
         }
 
         .filter-btn.active, .filter-btn:hover {
             background: var(--primary);
+            color: white;
             border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(0, 168, 89, 0.3);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
         }
 
         .project {
-            background: var(--card);
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 16px;
             overflow: hidden;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
         }
 
         .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
         }
 
         .project img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
+            border-bottom: 1px solid var(--card-border);
         }
 
         .project-content {
-            padding: 25px;
+            padding: 30px;
         }
 
         .project-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
         }
 
         .project-content p {
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
         .tag {
             display: inline-block;
-            margin-top: 20px;
-            background: rgba(56, 189, 248, 0.08);
-            color: #38bdf8;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
+            margin-top: 22px;
+            background: rgba(0, 168, 89, 0.1);
+            color: #22c55e;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
         /* FAQ Interactive Systems */
         .faq-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             display: grid;
             gap: 20px;
         }
 
         .faq-item {
-            background: var(--card);
-            border-radius: 8px;
+            background: var(--card-bg);
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
         }
 
         .faq-question {
-            padding: 20px 25px;
+            padding: 24px 30px;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
             font-weight: 600;
-            color: var(--light);
+            color: var(--text-main);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.01);
             user-select: none;
         }
 
         .faq-question:hover {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .faq-answer {
-            padding: 0 25px;
+            padding: 0 30px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
         }
 
         .faq-indicator {
             color: var(--primary);
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: var(--transition);
         }
 
-        /* Contact Form Layout Details */
+        /* Contact & Reference Sections */
         .contact-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
             align-items: start;
         }
 
         .form-card {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            color: var(--light);
+            margin-bottom: 10px;
+            color: var(--text-main);
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 16px;
-            background: var(--dark);
-            border: 1px solid #334155;
-            border-radius: 8px;
-            color: var(--light);
+            padding: 14px 18px;
+            background: var(--dark-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-main);
             font-size: 0.95rem;
+            font-family: var(--font-body);
             transition: var(--transition);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 168, 89, 0.15);
+            box-shadow: 0 0 0 4px var(--primary-glow);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
         }
 
         .ref-card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 12px;
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 16px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .ref-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
         }
 
         .ref-card h4 {
-            font-size: 1.2rem;
-            color: var(--light);
-            margin-bottom: 4px;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 6px;
         }
 
         .ref-card p {
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 0.95rem;
         }
 
         .contact-details-side p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
         }
 
         .contact-label {
-            color: var(--muted);
-            margin-right: 8px;
+            color: var(--text-muted);
+            margin-right: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: 110px;
+            display: inline-block;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid #232f45;
-            color: var(--muted);
+            padding: 40px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
             font-size: 0.9rem;
+            letter-spacing: 0.02em;
         }
 
-        /* High-Resolution Media Framework Rules */
+        /* High-Resolution Responsive Adaptation Framework */
         @media (max-width: 992px) {
-            .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            .contact-wrapper { grid-template-columns: 1fr; gap: 50px; }
+            section { padding: 80px 6%; }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero-title { background: none; -webkit-text-fill-color: var(--light); color: var(--light); }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 30px; }
-            section { padding: 60px 6%; }
+            .hero h1 { font-size: 2.6rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 35px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO SECTION -->
+    <!-- HERO ARCHITECTURE -->
     <header>
         <div class="hero">
-            <img src="profile.jpg" alt="Jamal Fahadh Mohamed" class="profile">
-            <h1 class="hero-title">Jamal Fahadh Mohamed</h1>
+            <div class="profile-wrapper">
+                <img src="profile.jpg" alt="Jamal Fahadh Mohamed" class="profile">
+                <div class="status-badge">Available Now</div>
+            </div>
+            <h1><span class="hero-title">Jamal Fahadh Mohamed</span></h1>
             <h2>Senior Graphic Designer & Pre-Press Specialist</h2>
             <p>
-                Over 7 years of professional experience blending creative layout design with technical computing foundations. 
-                Specialized in corporate branding, production-ready print preparation, and responsive web aesthetics.
+                Over 7 years of industrial experience blending creative brand layout architectures with structural computing engineering [cite: Jamal Fahadh Mohamed is a professional ICT Educator and Computer Science Specialist., Served as ICT Department Lead and Network Administrator at Elm High School in Hargeisa from September 2018 to June 2025.]. 
+                Expert in large-format scaling, automated color management, and absolute pre-press precision mechanics.
             </p>
             <div class="buttons">
-                <!-- Pointed target straight to your repository's root cv.pdf asset -->
-                <a href="cv.pdf" download="Jamal_Fahadh_CV.pdf" class="btn btn-primary">Download Complete CV</a>
-                <a href="#portfolio" class="btn btn-outline">View Portfolio Projects</a>
+                <a href="cv.pdf" download="Jamal_Fahadh_CV.pdf" class="btn btn-primary">Download Production CV</a>
+                <a href="#portfolio" class="btn btn-outline">Analyze Studio Projects</a>
             </div>
         </div>
     </header>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT / VALUE MATRIX SECTION -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">Studio Profile</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>Professional Profile</h3>
+                <h3>The Technical Print Advantage</h3>
                 <p>
-                    Based in Hargeisa, I am a dedicated Graphic Designer and ICT Professional. Holding a Bachelor of Business 
-                    Information Technology with Upper Division Honors, I offer an essential advantage to modern print studios: I seamlessly combine 
-                    creative design principles with an advanced understanding of digital file parameters, rendering, and technical accuracy.
+                    Based in Hargeisa, I am a strategic Graphic Designer holding an Upper Division Honors degree in Business Information Technology from JKUAT. This unique computing framework means I do not just design visuals—I understand exactly how rendering engines, vector mathematical points, and digital layout parameters execute inside high-speed commercial printing environments.
                 </p>
             </div>
             <div class="card">
-                <h3>Quick Information</h3>
-                <p style="margin-bottom: 12px;"><em class="info-label">📍 Location:</em> Hargeisa, Somaliland</p>
-                <p style="margin-bottom: 12px;"><em class="info-label">📞 Mobile Contact:</em> +252 63 6710907</p>
-                <p style="margin-bottom: 12px;"><em class="info-label">✉️ Email Address:</em> teacherfahadh@gmail.com</p>
-                <p><em class="info-label">🌐 Web Portfolio:</em> fahadict.github.io/tech</p>
+                <h3>Production Coordinates</h3>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Location:</span> Hargeisa, Somaliland</p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Mobile:</span> +252 63 6710907</p>
+                <p style="margin-bottom: 16px;"><span class="contact-label">Email:</span> teacherfahadh@gmail.com</p>
+                <p><span class="contact-label">Portfolio:</span> fahadict.github.io/tech</p>
             </div>
         </div>
     </section>
 
-    <!-- DESIGN PHILOSOPHY FRAMEWORK -->
-    <section id="philosophy">
-        <h2 class="section-title">Design Philosophy</h2>
+    <!-- CRITICAL PRINT SHOP PHILOSOPHY -->
+    <section id="philosophy" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Production Workflow Standards</h2>
         <div class="grid-3">
             <div class="benefit-card">
-                <h3 style="color: var(--primary);">1. Structural Discovery</h3>
-                <p>Every project begins by breaking down client parameters, understanding the visual media's objective, and designing grid frameworks that maintain structural hierarchy across assets.</p>
+                <h3 style="color: var(--primary);">1. Zero-Waste Optimization</h3>
+                <p>Meticulous layout imposition using industry nesting standards. Every multi-page booklet or retail sticker sheet is carefully aligned onto master print dimensions to minimize waste metrics and maintain accurate cutting margins.</p>
             </div>
             <div class="benefit-card">
-                <h3 style="color: var(--primary);">2. Meticulous Precision</h3>
-                <p>Aligning visual art with software execution. Using advanced typography principles, geometric spacing rules, and pristine vector lines to prevent any pixel scaling distortion.</p>
+                <h3 style="color: var(--primary);">2. Flawless Vector Rigor</h3>
+                <p>Advanced digital reconstruction using geometric anchor points. All branding layouts are crafted to sustain massive architectural upscaling without pixel degradation or line artifacts.</p>
             </div>
             <div class="benefit-card">
-                <h3 style="color: var(--primary);">3. Technical Verification</h3>
-                <p>A strict final checkpoint loop verifying export variables. Cross-checking output resolution, font rendering embeds, safe margins, and layout compatibility checks prior to press submission.</p>
+                <h3 style="color: var(--primary);">3. Absolute Pre-flight Checkpoints</h3>
+                <p>Strict quality control loops checking resolution depths (300+ DPI standard), path containment, safety text bleeds, and direct embedded typography compilation before raw file processing submission.</p>
             </div>
         </div>
     </section>
 
-    <!-- TECHNICAL PRINT ADVANTAGE SECTION -->
+    <!-- THE BRAND & DIGITAL PRINTING EXPERTISE -->
     <section id="pre-press">
-        <h2 class="section-title">The Technical Print Edge</h2>
+        <h2 class="section-title">Core Printing Capabilities</h2>
         <div class="grid-3">
             <div class="benefit-card">
-                <h3>Pre-Press Execution</h3>
-                <p>Ensuring absolute accuracy prior to ink hitting paper. Expert production setup including bleed paths, precise cut lines, safe margins, and high-DPI raster optimization.</p>
+                <h3>Pre-Press Automation</h3>
+                <p>Flawless construction of file separations, color bars, overlap trapping definitions, structural trim metrics, and high-DPI rasterization optimized for quick processing loops.</p>
             </div>
             <div class="benefit-card">
-                <h3>Color Management</h3>
-                <p>Meticulous translation of color profiles from screen to print. Keeping corporate branding completely unified across RGB screens and CMYK press runs.</p>
+                <h3>Color Space Calibration</h3>
+                <p>Seamless translation across software matrices. Transforming RGB screen colors into exact, unshifted CMYK ink values to preserve strict corporate color identity targets.</p>
             </div>
             <div class="benefit-card">
-                <h3>Vector Standardization</h3>
-                <p>Advanced asset construction utilizing crisp, responsive vectors in Adobe Illustrator, guaranteeing perfect clarity from small business cards to massive outdoor billboard banners.</p>
+                <h3>Substrate & Plotter Scaling</h3>
+                <p>Adapting digital output specifications according to distinct surface materials—ensuring perfect visual scaling for vinyl banners, stickers, textured stocks, or vehicle wraps.</p>
             </div>
         </div>
     </section>
 
-    <!-- INDUSTRY VERTICAL MASTERY -->
-    <section id="verticals">
-        <h2 class="section-title">Industry Verticals Served</h2>
+    <!-- INDUSTRY SECTORS SERVED -->
+    <section id="verticals" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Commercial Printing Categories</h2>
         <div class="grid-3">
             <div class="card">
-                <h3 style="color: var(--secondary);">Corporate & Retail</h3>
-                <p>Delivering high-performance marketing collateral, strategic brand kits, customer brochures, and display packaging designed to maximize consumer conversion metrics and local brand equity.</p>
+                <h3 style="color: var(--secondary);">Corporate Branding Kites</h3>
+                <p>Architecting complete retail visual packages, stationery configurations, display boxes, corporate brochures, and business card setups designed to match strict print guidelines.</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--secondary);">Government & NGOs</h3>
-                <p>Providing precision layout formatting for information booklets, regional maps, project disclosure reports, and public notice banners matching strict institutional publication parameters.</p>
+                <h3 style="color: var(--secondary);">Large-Format Media</h3>
+                <p>Developing ultra-high resolution exhibition canvas sheets, outdoor promotional billboards, public information banners, and vehicle graphic mockups prepared for direct plot clipping.</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--secondary);">Education Hubs</h3>
-                <p>Developing structured academic curriculum portfolios, custom textbooks, institution timetables, internal administrative documents, and clear multi-scale campus infographics.</p>
+                <h3 style="color: var(--secondary);">Institutional Books</h3>
+                <p>Managing layout architecture for multi-page annual reports, school magazines, information brochures, and bound catalogues requiring complex page layout ordering.</p>
             </div>
         </div>
     </section>
 
-    <!-- INDUSTRIAL SYSTEMS & DIGITAL INTEGRATION -->
+    <!-- HARDWARE-SOFTWARE INTEGRATION -->
     <section id="production-systems">
-        <h2 class="section-title">Production & Software Agility</h2>
+        <h2 class="section-title">Network & RIP System Agility</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>File Imposition & Layout Nesting</h3>
+                <h3>Digital Layout & Nesting Mechanics</h3>
                 <p>
-                    Possess technical insight into layout imposition mechanics. I carefully space multi-page booklets, templates, and cards onto large print sheets to reduce paper waste and maximize cutting system alignment during high-speed runs.
+                    I design with deep technical insight into high-speed printing layouts. By strategically grouping multiple shapes on large-format media, I balance ink limits, avoid registration drift, and ensure clean separation for cutting machines.
                 </p>
             </div>
             <div class="card">
-                <h3>System Architecture & Quality Control</h3>
+                <h3>RIP Server & Network Maintenance</h3>
                 <p>
-                    My extensive computing background means I troubleshoot local network configurations, print-spooler data crashes, and large file rendering issues without halting the studio's active workflow production deadlines.
+                    My background in computer systems allows me to handle local print network paths, debug print-spool data queues, optimize huge processing files, and troubleshoot system issues without interrupting the studio workflow.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- CORE SKILLS MATRIX -->
-    <section id="skills">
-        <h2 class="section-title">Core Competencies</h2>
+    <!-- COMPETENCIES PROGRESS MATRIX -->
+    <section id="skills" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Software Command</h2>
         <div class="grid-3">
             <div class="skill-bar">
-                <div class="skill-info"><b class="skill-title">Adobe Photoshop</b><b class="skill-pct">95%</b></div>
+                <div class="skill-info"><span class="skill-title">Adobe Photoshop (Raster & Color Correction)</span><span class="skill-pct">95%</span></div>
                 <div class="progress"><div class="fill" style="width: 95%"></div></div>
             </div>
             <div class="skill-bar">
-                <div class="skill-info"><b class="skill-title">Adobe Illustrator</b><b class="skill-pct">90%</b></div>
-                <div class="progress"><div class="fill" style="width: 90%"></div></div>
+                <div class="skill-info"><span class="skill-title">Adobe Illustrator (Vector Engineering)</span><span class="skill-pct">92%</span></div>
+                <div class="progress"><div class="fill" style="width: 92%"></div></div>
             </div>
             <div class="skill-bar">
-                <div class="skill-info"><b class="skill-title">Canva Studio Pro</b><b class="skill-pct">98%</b></div>
+                <div class="skill-info"><span class="skill-title">Canva Studio Pro (Rapid Asset Layouts)</span><span class="skill-pct">98%</span></div>
                 <div class="progress"><div class="fill" style="width: 98%"></div></div>
             </div>
             <div class="skill-bar">
-                <div class="skill-info"><b class="skill-title">HTML5 & CSS3 Layouts</b><b class="skill-pct">85%</b></div>
+                <div class="skill-info"><span class="skill-title">HTML5 & CSS3 Design Architecture</span><span class="skill-pct">85%</span></div>
                 <div class="progress"><div class="fill" style="width: 85%"></div></div>
             </div>
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
+    <!-- PROFESSIONAL HISTORY -->
     <section id="experience">
-        <h2 class="section-title">Professional History</h2>
+        <h2 class="section-title">Work History</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <h3>Digital Branding & Layout Consultant</h3>
-                <div class="company">Freelance Corporate Services, Hargeisa</div>
+                <h3>Digital Branding & Pre-Press Consultant</h3>
+                <div class="company">Freelance Corporate Services | Hargeisa</div>
                 <div class="date">2018 - Present</div>
                 <ul>
-                    <li>Designed corporate logo structures, comprehensive style guides, and cohesive brand identities for regional small businesses.</li>
-                    <li>Developed high-quality commercial assets including brochures, promotional flyers, catalog blueprints, and multi-scale indoor banners.</li>
-                    <li>Engineered localized marketing graphics precisely scaled for optimized delivery on Facebook and WhatsApp networks.</li>
+                    <li>Constructed corporate logo systems, technical typography style books, and asset packs for local small businesses.</li>
+                    <li>Developed premium print assets including catalogs, event booklets, bi-fold brochures, and large retail banners.</li>
+                    <li>Prepared production-ready files with accurate color profiles, safe bleed targets, and path layouts for printing machines.</li>
+                    <li>Engineered optimized marketing assets formatted for rapid loading across local business messaging networks.</li>
                 </ul>
             </div>
             <div class="timeline-item">
                 <h3>ICT Content Creator & Design Lead</h3>
-                <div class="company">Elm High School, Hargeisa</div>
+                <div class="company">Elm High School | Hargeisa</div>
                 <div class="date">September 2018 - June 2025</div>
                 <ul>
-                    <li>Produced academic publications, official calendars, structured worksheets, annual magazines, and student registration guides.</li>
-                    <li>Designed, deployed, and updated responsive school portals and web-based educational assets using clean, structured code layouts.</li>
-                    <li>Maintained absolute visual consistency across the institution’s physical print collateral and active digital marketing profiles.</li>
+                    <li>Designed and managed multi-page school publications, official calendars, multi-scale campus magazines, and promotional flyers.</li>
+                    <li>Maintained absolute visual consistency across the school's physical print assets and online media channels.</li>
+                    <li>Managed and updated responsive institutional web structures using clean code frameworks.</li>
+                    <li>Maintained local system architectures and solved computer hardware faults inside the data lab.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION & CERTIFICATIONS -->
-    <section id="education">
+    <!-- ACADEMIC MATRIX -->
+    <section id="education" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title">Education & Credentials</h2>
         <div class="grid-2">
             <div class="card" style="border-right: 4px solid var(--secondary);">
                 <h3>Bachelor of Business Information Technology (BBIT)</h3>
                 <p>Jomo Kenyatta University of Agriculture and Technology (JKUAT)</p>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-top: 10px;">Second Class Honors (Upper Division)</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Second Class Honors (Upper Division)</p>
             </div>
             <div class="card" style="border-right: 4px solid var(--secondary);">
                 <h3>Certificate in E-Commerce & Web Design</h3>
                 <p>Technical Training Institute</p>
-                <p style="color: var(--muted); font-size: 0.9rem; margin-top: 10px;">Graduated with Distinction Grade</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Graduated with Distinction Grade</p>
             </div>
         </div>
     </section>
 
-    <!-- PORTFOLIO IMAGES FIXED TO ROOT LEVEL (Per 10173.jpg layout) -->
+    <!-- FEATURED SPECIMEN GALLERIES -->
     <section id="portfolio">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Production Specimen Gallery</h2>
         
         <div class="portfolio-filters">
             <button class="filter-btn active" onclick="filterGallery('all')">All Works</button>
@@ -700,78 +819,78 @@
 
         <div class="portfolio-grid">
             <div class="project" data-category="print">
-                <img src="calendar.jpg" alt="Academic Calendars">
+                <img src="calendar.jpg" alt="Multi-page Publication Designs">
                 <div class="project-content">
-                    <h3>Academic Calendars & Publications</h3>
-                    <p>Professional multi-page schedules, information brochures, and booklets prepared with strict grid alignment for industrial print machines.</p>
-                    <div class="tag">Print Design Layout</div>
+                    <h3>Academic Calendars & Booklets</h3>
+                    <p>Multi-page print assets structured with systematic grid formatting, clean fold alignments, and safe cut limits for automated production runs.</p>
+                    <div class="tag">Pre-Press Sheet Imposition</div>
                 </div>
             </div>
             <div class="project" data-category="print">
-                <img src="billboard.jpg" alt="Large Format Signage">
+                <img src="billboard.jpg" alt="Large Format Exhibition Layouts">
                 <div class="project-content">
-                    <h3>Large-Format Exhibition Signage</h3>
-                    <p>High-resolution marketing banners and storefront geometries mapped specifically to withstand upscaled rendering distortion without loss of line definition.</p>
+                    <h3>Large-Format Storefront Banners</h3>
+                    <p>High-resolution marketing banners built with absolute geometric line accuracy to prevent rendering blur or raster defects on large-scale plots.</p>
                     <div class="tag">Large-Format Production</div>
                 </div>
             </div>
             <div class="project" data-category="branding">
-                <img src="logo-project.jpg" alt="Brand Identity Kits">
+                <img src="logo-project.jpg" alt="Corporate Brand Ecosystem Architecture">
                 <div class="project-content">
-                    <h3>Corporate Brand Ecosystems</h3>
-                    <p>End-to-end identity design involving custom logo marks, scalable geometry vectors, and brand asset manual templates.</p>
-                    <div class="tag">Branding Architecture</div>
+                    <h3>Corporate Brand Visual Systems</h3>
+                    <p>Comprehensive identity kits including vector files, color guidelines, and application manual templates for unified multi-surface execution.</p>
+                    <div class="tag">Vector System Architecture</div>
                 </div>
             </div>
             <div class="project" data-category="branding">
-                <img src="social-media.jpg" alt="Social Media Campaigns">
+                <img src="social-media.jpg" alt="High-Contrast Digital Content Packages">
                 <div class="project-content">
-                    <h3>Social Media Implementations</h3>
-                    <p>High-contrast, high-engagement promotional visual elements tailored specifically for local enterprise networks and chat communication systems.</p>
-                    <div class="tag">Digital Content Design</div>
+                    <h3>Targeted Content Frameworks</h3>
+                    <p>High-impact, optimized layout systems engineered with optimized color profiles for rapid loading on local online networks.</p>
+                    <div class="tag">Digital Optimization</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTION STUDIO FAQ COMPONENT -->
-    <section id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
+    <!-- INDUSTRIAL STUDIO FAQ COMPONENT -->
+    <section id="faq" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title">Pre-Press FAQ</h2>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Are your files guaranteed print-ready for industrial production?
+                    Are files compiled directly to true print-ready status?
                     <div class="faq-indicator">+</div>
                 </div>
                 <div class="faq-answer">
-                    Yes, absolutely. I construct layouts using appropriate bleed parameters, safety margins, embedded vector paths, and convert text elements directly into safe vector shapes to prevent any missing typography errors.
+                    Yes. Every file is structured with standard outer bleeds, safe text spacing margins, and direct vector line conversions. Fonts are embedded or converted to outlines to prevent file mapping errors during printing.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    How do you manage color variations between screens and physical ink?
+                    How do you prevent unexpected color shifts during production runs?
                     <div class="faq-indicator">+</div>
                 </div>
                 <div class="faq-answer">
-                    I design natively within CMYK color spaces when working on print material projects and explicitly match brand color parameters using calibrated color values to eliminate unexpected variations.
+                    I design natively within calibrated CMYK target spaces when preparing print media. I systematically track ink coverage levels and verify spot color configurations to eliminate unexpected tone variations between screen and physical print.
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Can you clean up poor-resolution graphics supplied by clients?
+                    Can you handle broken or pixelated asset files supplied by clients?
                     <div class="faq-indicator">+</div>
                 </div>
                 <div class="faq-answer">
-                    Yes. Leveraging Adobe Illustrator, I manually reconstruct low-quality pixelated logos into scalable vector curves so they can print perfectly at large scales.
+                    Yes. Utilizing geometric path rendering in Adobe Illustrator, I manually trace and rebuild low-resolution raster graphics into sharp vector paths, ensuring crisp quality even for large-scale outdoor displays.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REFERENCES SECTION -->
+    <!-- CONFIRMED REFERENCES SECTION -->
     <section id="references">
-        <h2 class="section-title">Professional References</h2>
-        <div class="grid-2">
+        <h2 class="section-title">Verified References</h2>
+        <div class="grid-2" style="max-width: 800px; margin: 0 auto;">
             <div class="ref-card">
                 <h4>Yusuf Lutta</h4>
                 <p>Principal, Elm High School</p>
@@ -783,47 +902,47 @@
         </div>
     </section>
 
-    <!-- CONTACT OPERATIONS MODULE -->
-    <section id="contact">
-        <h2 class="section-title">Start A Project Together</h2>
+    <!-- SECURE INTERFACE CONTACT OPERATION MODULE -->
+    <section id="contact" style="background: radial-gradient(circle at bottom center, var(--primary-glow), transparent 60%);">
+        <h2 class="section-title">Initiate Commercial Project</h2>
         
         <div class="contact-wrapper">
             <div class="form-card">
                 <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Transmission completed successfully.');">
                     <div class="form-group">
                         <label for="name">Your Name / Agency</label>
-                        <input type="text" id="name" class="form-control" placeholder="Brand Digital Printing" required>
+                        <input type="text" id="name" class="form-control" placeholder="Brand Digital Printing Studio" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="manager@agency.com" required>
+                        <input type="email" id="email" class="form-control" placeholder="studio@agency.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Project Parameters / Inquiry</label>
-                        <textarea id="message" class="form-control" placeholder="Detail your production or branding requirements..." required></textarea>
+                        <label for="message">Production Requirements / Technical Query</label>
+                        <textarea id="message" class="form-control" placeholder="Detail your project dimensions, target substrate, or required file processing specifications..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin: 0;">Send Secure Message</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin: 0; border: none; font-family: var(--font-display);">Transmit Secure Message</button>
                 </form>
             </div>
 
-            <div class="contact-details-side" style="padding-top: 10px;">
-                <p><b class="contact-label">Direct Phone Line:</b> +252 63 6710907</p>
-                <p><b class="contact-label">Corporate Mailbox:</b> teacherfahadh@gmail.com</p>
-                <p><b class="contact-label">Primary Operations:</b> Hargeisa, Somaliland</p>
+            <div class="contact-details-side" style="padding-top: 15px;">
+                <p><span class="contact-label">Hotline:</span> +252 63 6710907</p>
+                <p><span class="contact-label">Secure Mail:</span> teacherfahadh@gmail.com</p>
+                <p><span class="contact-label">Operations:</span> Hargeisa, Somaliland</p>
                 <br>
-                <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.7;">
-                    Ready to bring error-free pre-press rendering and structured digital branding directly into your design studio environment. Let's start production.
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                    Equipped to deliver clean digital files, optimized pre-press layouts, and robust technical support directly to your production workflow. Let's start the press run.
                 </p>
-                <a href="mailto:teacherfahadh@gmail.com" class="btn btn-outline" style="margin-left: 0; margin-top: 10px;">
-                    Direct Email Hire
+                <a href="mailto:teacherfahadh@gmail.com" class="btn btn-outline" style="margin-left: 0; margin-top: 15px;">
+                    Direct Production Hire
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER ARCHITECTURE -->
     <footer>
-        &copy; 2026 Jamal Fahadh Mohamed. All Rights Reserved. Engineered for Precision Production.
+        &copy; 2026 Jamal Fahadh Mohamed. All Rights Reserved. Engineered for Zero-Error Industrial Print Management.
     </footer>
 
     <!-- INTERACTIVE PERFORMANCE SCRIPTS -->
@@ -851,12 +970,14 @@
             
             if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
                 answer.style.maxHeight = '0px';
-                answer.style.padding = '0px 25px';
+                answer.style.padding = '0px 30px';
                 indicator.textContent = '+';
+                element.parentElement.style.borderColor = 'var(--card-border)';
             } else {
                 answer.style.maxHeight = answer.scrollHeight + 40 + 'px';
-                answer.style.padding = '20px 25px';
+                answer.style.padding = '20px 30px 30px 30px';
                 indicator.textContent = '−';
+                element.parentElement.style.borderColor = 'var(--primary)';
             }
         }
     </script>
